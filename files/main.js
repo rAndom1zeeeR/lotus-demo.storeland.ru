@@ -2313,7 +2313,7 @@ function removeFromCartAll(e){
 
 // Корзина
 function ajaxnewqty(){
-  $('.cartqty').change(function(){
+  $('.cartqty').change($.debounce(300, function(){
     s = $(this);
     id = $(this).closest('div.items').data('id');
     qty = $(this).val();
@@ -2347,7 +2347,7 @@ function ajaxnewqty(){
         }
       }
     })
-  })
+  }))
 }
 
 // Удаление товара из корзины
