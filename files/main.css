@@ -305,7 +305,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 
 /*** Шапка ***/
 .index #header {position: absolute;top: 0;left: 0;width: 100%;background-color: rgba(255,255,255,0.5);z-index: 9;border: 0;}
-#header {position: relative;margin: 0;transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);background-color: #ffffff;z-index: 5;border-bottom: 1px solid #eaeaea;}
+#header {position: relative;margin: 0;transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);background-color: #ffffff;border-bottom: 1px solid #eaeaea;}
 #header .announcement-bar {padding: 10px 50px 10px 15px;text-align: center;color: #fff;background-color: #9dbab3;}
 #header .announcement-bar .text {line-height: 20px;}
 #header .announcement-bar .text span {font-weight: bold;}
@@ -1263,7 +1263,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .step li.step_done {border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
 .formfast-cart {display: none !important;}
 #OrderAjaxBlock .formfast #closeOrder {display: inline-block;}
-.filters-goods .filter {width: 47%;}
+.filters-goods .filter {width: calc(50% - 15px);}
 .filters-goods .filter:nth-child(3n) {margin-right: 15px;}
 .filters-goods .filter:nth-child(2n) {margin-right: 0;}
 .filters-goods .filter select, .filters-price .label {width: 100%;}
@@ -1306,7 +1306,6 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .CompareGoodsTableFilter {line-height: 1;}
 .CompareGoodsTableFilter span {margin-bottom: 10px;}
 .CompareGoodsTable .CompareNavigation {float: none;text-align: center;}
-.filters-goods .filter {width: 47%;}
 .stages-list .stages {width: 100%;max-width: 100%;}
 .pages .label {display: none;}
 .delivery .orderStageDeliveryListTable .cell1, .payment .orderStagePayment .cell1 {width: 30px;}
@@ -1321,6 +1320,8 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .sort-by + .show-by {margin-left: 15px;}
 .product-tabs .tabs li {width: 49%;}
 .related .block-title .title {font-size: 28px;}
+.filters-goods .filter {width: 100%;}
+.filters-goods .filter:nth-child(n) {margin-right: 0;}
 #slideshow .slider .item .content {top: 20%;}
 #header .search {display: block;margin: 15px 0 0 0;}
 #header .search .block-search .field:before {display: none;}
@@ -1339,8 +1340,6 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .orderStrageContent .buttons .button {margin: 0 10px 10px 0;float: left;}
 .orderStrageContent .buttons .button:nth-child(2) {float: left;margin: 0;}
 .navigation .prev, .navigation .next, .owl-nav .owl-prev, .owl-nav .owl-next {width: 35px;font-size: 40px;}
-.filters-goods .filter {width: 100%;}
-.filters-goods .filter:nth-child(n) {margin-right: 0;}
 .pages {width: 100%;text-align: center;float: none;}
 .pages ol li {margin-right: 5px;}
 .toolbar .filters-label {display: none;}
