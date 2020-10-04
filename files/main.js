@@ -271,7 +271,7 @@ $(function() {
             data.category[с].image_icon = data.category[с].image_icon;
           }
           // Отображаем результат поиска
-          $("#search__result .result__category").prepend('<div class="result__item" data-id="'+ data.category[с].goods_cat_id +'"><a href="'+ data.category[с].url +'"><div class="result__image"><img src="'+ data.category[с].image_icon +'" class="goods-image-icon" /></div><div class="result__name"><span>'+ data.category[с].goods_cat_name +'</span></div></a></div>');
+          $("#search__result .result__category").append('<div class="result__item" data-id="'+ data.category[с].goods_cat_id +'"><a href="'+ data.category[с].url +'"><div class="result__image"><img src="'+ data.category[с].image_icon +'" class="goods-image-icon" /></div><div class="result__name"><span>'+ data.category[с].goods_cat_name +'</span></div></a></div>');
         }
       }else{
         $(".result__category .result__item").remove();
@@ -290,7 +290,7 @@ $(function() {
           }
           // Отображаем результат поиска
           if(i <= 4 ){
-            $("#search__result .result__goods").prepend('<div class="result__item" data-id="'+ data.goods[i].goods_id +'"><a href="'+ data.goods[i].url +'"><div class="result__image"><img src="'+ data.goods[i].image_icon +'" class="goods-image-icon" /></div><div class="result__name"><span>'+ data.goods[i].goods_name +'</span></div></a></div>');
+            $("#search__result .result__goods").append('<div class="result__item" data-id="'+ data.goods[i].goods_id +'"><a href="'+ data.goods[i].url +'"><div class="result__image"><img src="'+ data.goods[i].image_icon +'" class="goods-image-icon" /></div><div class="result__name"><span>'+ data.goods[i].goods_name +'</span></div></a></div>');
           }
           // Если последняя итерация цикла вставим кнопку "показать все"
           if(i > 4){
@@ -1457,6 +1457,7 @@ $(document).ready(function(){
     
     $(function(){
       $('.zoneSelect option').each(function(){
+        console.log('zoneSelect')
         id = $(this).attr('deliveryid');    
         select = $(this).parent('select').length;
         $('.zoneSelect select').addClass('inputText');
@@ -1471,8 +1472,21 @@ $(document).ready(function(){
         }
       });
     });
+
+    $(function(){
+      $('.zoneSelect select').change(function(){
+        console.log('zone2')
+        optValue = $(this).find('option:selected').attr('value');
+        $('.zones input[value="'+optValue+'"]').click();
+        WithZone =  parseInt($('.deliveryZoneRadio:checked').attr('price'));
+        $('.changeprice').text(WithZone);
+        var newPrice = parseInt($('.formfast-cart .subtotal .total-sum').attr('price')) + WithZone;
+        $('.formfast-cart .subtotal .total-sum .num').text(newPrice);
+      })
+    })
     
     $('.mainSelect').change(function(){
+      console.log('mainSelect')
       selectedDelId = $(this).find('option:selected').attr('delid');   
       $('.zoneSelect select').hide();
       $('.zoneSelect select[del="'+selectedDelId+'"]').show();
@@ -1480,8 +1494,8 @@ $(document).ready(function(){
       $('.zoneSelect select[del="'+selectedDelId+'"] option:first-of-type').attr('selected',true);
       $('.deliveryOption .deliveryRadio[value="'+selectedDelId+'"]').click();
       
-      WithoutZone = parseInt($('input.deliveryRadio:checked').attr('pricewithoutzones'));
-      WithZone =  parseInt($('input.deliveryZoneRadio:checked').attr('price'));
+      WithoutZone = parseInt($('[rel='+ selectedDelId +'] .deliveryRadio:checked').attr('pricewithoutzones'));
+      WithZone =  parseInt($('[rel='+ selectedDelId +'] .deliveryZoneRadio:checked').attr('price'));
       
       if(WithZone > 0){
         startprice = WithZone;
@@ -1587,19 +1601,6 @@ $(document).ready(function(){
     });
     return false;      
   }).validate();
-});
-
-$(document).ready(function(){
-  $(function(){
-    $('.zoneSelect select').change(function(){
-      optValue = $(this).find('option:selected').attr('value');
-      $('.zones input[value="'+optValue+'"]').click();
-      WithZone =  parseInt($('.deliveryZoneRadio:checked').attr('price'));
-      $('.changeprice').text(WithZone);
-      var newPrice = parseInt($('.formfast-cart .subtotal .total-sum').attr('price')) + WithZone;
-      $('.formfast-cart .subtotal .total-sum .num').text(newPrice);
-    })
-  })
 });
 
 }

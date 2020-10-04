@@ -881,7 +881,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 /*** Быстрый заказ ***/
 #OrderAjaxBlock .block-title {display: none;}
 #OrderAjaxBlock .formfast .buttons {margin: 30px 0 0;text-align: center;}
-#OrderAjaxBlock .currentDeliveryDesc {display: none;}
+#OrderAjaxBlock .subtotal .currentDeliveryDesc {display: none;}
 #quickform > div {margin-bottom: 30px;}
 #quickform .buttons {text-align: center;}
 .quickformfast {max-width: 800px;padding: 0 15px;overflow-x: hidden;text-align: left;}
