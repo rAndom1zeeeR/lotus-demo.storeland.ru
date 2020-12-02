@@ -144,9 +144,11 @@
             <div class="mob-filters" title="Показать фильтры"><div class="close" title="Закрыть фильтры"><div class="icon-close"></div></div><span class="filters-label">Фильтры:</span></div>
           {% ENDIF %}
           <!-- /END Адаптивные фильтры -->
+	        {% IF TARIFF_FEATURE_GOODS_COMPARE && SETTINGS_COMPARE_DISABLE=0 %}
           <div class="compare">
             <a href="{COMPARE_URL}" title="Перейти к сравнению товаров"><i class="material-icons">format_align_right</i></a>
           </div>
+	        {% ENDIF %}
           <div class="favorites">
             <a href="{FAVORITES_URL}" title="Перейти к сравнению товаров"><i class="material-icons">favorite</i></a>
           </div>
