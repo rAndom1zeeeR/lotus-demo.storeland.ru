@@ -258,7 +258,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .button.empty:after, .button.empty:hover:after {display: none;}
 
 /* Навигация */
-.navigation .prev, .navigation .next, .owl-nav .owl-prev, .owl-nav .owl-next {display: block;background-color: #fff;color: #a7a7a7;font-size: 50px;width: 50px;height: 50px;line-height: 50px;font-family: "Material Icons";margin: 0;padding: 0;overflow: hidden;text-align: center;cursor: pointer;z-index: 2;}
+.navigation .prev, .navigation .next, .owl-nav .owl-prev, .owl-nav .owl-next {display: block;background-color: #fff;color: #a7a7a7;font-size: 50px;width: 50px;height: 50px;line-height: 50px;font-family: "Material Icons";margin: 0;padding: 0;overflow: hidden;text-align: center;cursor: pointer;z-index: 2;border: 0;outline: 0;}
 .navigation .prev, .owl-nav .owl-prev {float: left;left: 0;}
 .navigation .next, .owl-nav .owl-next {float: right;right: 0;}
 .navigation .prev:before, .owl-nav .owl-prev:before {content: '\e314';}
@@ -759,6 +759,8 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 /*** Сопутствующие товары, С этим товаром смотрят ***/
 #related {position: relative;background-color: #fff;padding: 30px 0;}
 #related .products-grid .item {padding: 0;}
+#related .block-title {position: relative;}
+#related .navigation .owl-prev, #related .navigation .owl-next {position: absolute;top: 0;}
 
 /*** Хлебные крошки ***/
 #breadcrumbs {position: relative;background-color: #f7f7f7;}

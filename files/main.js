@@ -1948,30 +1948,20 @@ $('.product-view .product-shop .ratings .title a').click(function(event){
   }, 100);
 });
 
-// С этим товаром смотрят
-jQuery(function($) {
-  var owl = $('.related-views .products-grid');
-  // Показывать\Скрывать навигацию
-  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-    var items = event.item.count;
-    var size = event.page.size;
-    if (items < size){
-      $('.related-views .navigation').hide();
-    } else {
-      $('.related-views .navigation').show();
-    }
-  });
-  owl.owlCarousel({
-    items: 4,
-    margin: 30,
+// Сопутствующие товары Слайдер
+  $('.related-views .owl-carousel').owlCarousel({
+    items: 5,
+    margin: 32,
     loop: false,
     rewind: true,
-    lazyLoad: false,
-    dots: false,
-    nav: false,
+    lazyLoad: true,
+    nav: true,
     navContainer: '.related-views .navigation',
     navText: [ , ],
-    autoplay: true,
+    dots: false,
+    autoHeight: false,
+    autoHeightClass: 'owl-height',
+    autoplay: false,
     autoplayHoverPause: true,
     smartSpeed: 500,
     mouseDrag: true,
@@ -1990,40 +1980,20 @@ jQuery(function($) {
       1366:{items:4}
     }
   });
-  // Кнопки навигации
-  $('.related-views .navigation .next').click(function(event) {
-    event.preventDefault();
-    owl.trigger('next.owl.carousel');
-  });
-  $('.related-views .navigation .prev').click(function(event) {
-    event.preventDefault();
-    owl.trigger('prev.owl.carousel');
-  });
-});
-// Сопутствующие товары
-jQuery(function($) {
-  var owl = $('.related-goods .products-grid');
-  // Показывать\Скрывать навигацию
-  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-    var items = event.item.count;
-    var size = event.page.size;
-    if (items < size){
-      $('.related-goods .navigation').hide();
-    } else {
-      $('.related-goods .navigation').show();
-    }
-  });
-  owl.owlCarousel({
+  // Сопутствующие товары Слайдер
+  $('.related-goods .owl-carousel').owlCarousel({
     items: 4,
-    margin: 30,
+    margin: 32,
     loop: false,
     rewind: true,
-    lazyLoad: false,
-    nav: false,
+    lazyLoad: true,
+    nav: true,
     navContainer: '.related-goods .navigation',
     navText: [ , ],
     dots: false,
-    autoplay: true,
+    autoHeight: false,
+    autoHeightClass: 'owl-height',
+    autoplay: false,
     autoplayHoverPause: true,
     smartSpeed: 500,
     mouseDrag: true,
@@ -2042,16 +2012,6 @@ jQuery(function($) {
       1366:{items:4}
     }
   });
-  // Кнопки навигации
-  $('.related-goods .navigation .next').click(function(event) {
-    event.preventDefault();
-    owl.trigger('next.owl.carousel');
-  });
-  $('.related-goods .navigation .prev').click(function(event) {
-    event.preventDefault();
-    owl.trigger('prev.owl.carousel');
-  });
-});
 }
 
 // Скрипты для изображения товара
