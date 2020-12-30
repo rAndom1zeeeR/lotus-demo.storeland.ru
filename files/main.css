@@ -621,7 +621,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 
 /*** Товар ***/
 .product-view {position: relative;}
-.product-view .product-img-box {margin-bottom: 30px;padding-left: 0;}
+.product-view .product-img-box {margin-bottom: 30px;padding-left: 0;position: sticky;top: 0;}
 .product-view .product-img-box .product-image {position: relative;text-align: left;min-height: 200px;margin: 0 auto;max-width:{SETTINGS_GOODS_IMAGES_SIZE_MEDIUM | divide("1.6")}px;max-height:{SETTINGS_GOODS_IMAGES_SIZE_MEDIUM | divide("1.6")}px;}
 .product-view .product-img-box.fixed .product-image {position: fixed;top: 30px;overflow-anchor: auto;overflow-wrap: normal;overflow: visible;box-sizing: border-box;}
 .product-view .product-img-box.unfixed .product-image {margin-top: 0px;}
@@ -1167,6 +1167,7 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .product-view .product-shop .product-neighbor {display: none;}
 .product-view .product-shop, .product-view .product-img-box {padding: 0;}
 .product-view .product-shop .add-to-box .add-to-cart .button.quick {display: none;}
+.product-view .product-img-box {position: relative;top: auto;}
 .product-view .product-img-box .product-image {text-align: center;}
 .stages-list {display: inline-block;}
 .stages-list .stages {display: inline-block;width: 49%;margin-bottom: 30px;}
